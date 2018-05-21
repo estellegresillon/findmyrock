@@ -2,7 +2,13 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  resources :bands, except: [ :destroy, :edit ] do
+
+  #get '/profile/:id', redirect: '/profile'
+  get 'profile', to: 'profiles#show'
+  #delete 'bands/destroy', to: 'bands#destroy'
+
+  resources :profile, only: :show
+  resources :bands do
     resources :bookings, only: [:new, :create ]
   end
 
