@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+
+    <h1>UPDATE YOUR BAND</h1>
+
+    <%= simple_form_for @band do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :price %>
+      <%= f.input :number_of_musicians %>
+      <%= f.input :service_duration %>
+      <%= f.input :music_style %>
+
+      <%= f.submit "Update your band", class: "btn-yellow" %>
+    <% end %>
+    </div>
+  </div>
+</div>
