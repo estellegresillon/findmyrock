@@ -1,0 +1,51 @@
+.btn-yellow {
+  background-color: #FFA500;
+  width: 220px;
+  font-color: white;
+  padding: 12px 20px;
+  border-radius: 25px;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-weight: bolder;
+  color: white;
+}
+
+.btn-yellow:hover {
+  background-color: #FFD700;
+  font-weight: bolder;
+  color: white;
+}
+
+.goback {
+  margin-top: 70px;
+  margin-bottom: 10px;
+}
+
+.buttons {
+  display: flex;
+  justify-content:space-around;
+  .btn-yellow {
+    margin: 10px;
+  }
+}
+
+.submit {
+  background-color: #FFA500;
+  border: 3px solid #FFA500;
+  width: 100%;
+  font-color: white;
+  padding: 12px 20px;
+  border-radius: 25px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bolder;
+  color: white;
+}
+
+.submit:hover {
+  background-color: #FFD700;
+  border: 3px solid #FFD700;
+  font-weight: bolder;
+  color: white;
+}
