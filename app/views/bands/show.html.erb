@@ -13,7 +13,7 @@
         <li><%= @band.description %></li>
         <li><%= @band.music_style %></li>
         <li><%= @band.number_of_musicians %> musicians</li>
-        <li><%= @band.price %></li>
+        <li><%= @band.price_per_hour %></li>
       </ul>
     </div>
 
@@ -25,6 +25,7 @@
           <%= f.input :location, label: "City" %>
           <%= f.submit "Book us", class: "submit" %>
         <% end %>
+        <p>Total : <%= @band.price_per_hour %> €</p>
       </div>
     </div>
   </div>

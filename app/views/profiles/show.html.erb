@@ -8,7 +8,7 @@
     <% if current_user.band %>
       <p><%= current_user.band.name %></p>
       <p><%= current_user.band.music_style %></p>
-      <p><%= current_user.band.price %></p>
+      <p><%= current_user.band.price_per_hour %></p>
       <p><%= current_user.band.service_duration %></p>
       <p><%= current_user.band.number_of_musicians %></p>
       <p><%= current_user.band.description %></p>
@@ -22,12 +22,7 @@
       </div>
     </div>
     <h3>MY BOOKINGS</h3>
-    <% if current_user.bookings %>
-      <p><%= current_user.band.price %></p>
-      <p><%= current_user.band.service_duration %></p>
-      <p><%= current_user.band.number_of_musicians %></p>
-      <p><%= current_user.band.description %></p>
-    <% else %>
+
       <%= link_to "Book a band", bands_path, class: "btn-yellow" %>
     <% end %>
     <%= link_to 'Delete booking', booking_path(current_user), method: :delete, class: "btn-yellow" %>

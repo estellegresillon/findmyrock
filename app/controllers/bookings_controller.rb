@@ -26,7 +26,7 @@ before_action :booking_params, only: :create
   private
 
   def booking_params
-    params.require(:booking).permit(:date, :location, :band_id, :user_id)
+    params.require(:booking).permit(:date, :price, :location, :band_id, :user_id)
   end
 
 end
