@@ -4,6 +4,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @band = Band.find(params[:band_id])
     @review.band = @band
+    authorize @review
     if @review.save
       redirect_to band_path(@band, anchor: "anchor-review")
     else

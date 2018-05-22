@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 2018_05_22_114412) do
   end
 
   create_table "bookings", force: :cascade do |t|
-    t.boolean "performed", default: false
     t.string "location"
     t.date "date"
     t.bigint "band_id"

@@ -1,17 +1,20 @@
 class BandsController < ApplicationController
-before_action :band_params, only: [:create, :update]
+before_action :set_band, only: [:show, :update]
 
   def index
-    @bands = Band.all
+    # @bands = Band.all
+    @bands = policy_scope(Band)
   end
 
   def new
     @band = Band.new
+    authorize @band
   end
 
   def create
     @band = Band.new(band_params)
     @band.user = current_user
+    authorize @band
     if @band.save
       redirect_to band_path(@band)
     else
@@ -21,17 +24,16 @@ before_action :band_params, only: [:create, :update]
 
   def show
     @review = Review.new
-    @band = Band.find(params[:id])
     @booking = Booking.new
   end
 
   def edit
     @band = current_user.band
     @band.user = current_user
+    authorize @band
   end
 
   def update
-    @band = Band.find(params[:id])
     @band.user = current_user
     if @band.update(band_params)
       redirect_to profile_path, notice: "Band updated !"
@@ -52,6 +54,9 @@ before_action :band_params, only: [:create, :update]
     params.require(:band).permit(:name, :description, :music_style, :number_of_musicians, :price_per_hour, :service_duration, :user_id, :photo)
   end
 
-
+   def set_band
+    @band = Band.find(params[:id])
+    authorize @band
+    end
 
 end

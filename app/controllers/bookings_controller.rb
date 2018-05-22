@@ -3,6 +3,7 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
@@ -10,6 +11,7 @@ class BookingsController < ApplicationController
     @band = Band.find(params[:band_id])
     @booking.band = @band
     @booking.user = current_user
+    authorize @booking
     if @booking.save
       redirect_to "/profile"
     else
@@ -26,6 +28,7 @@ class BookingsController < ApplicationController
 
   def set_booking
     @booking = Booking.find(params[:id])
+    authorize @booking
   end
 
   def booking_params
