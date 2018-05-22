@@ -10,32 +10,36 @@
 
 <div class="content">
   <div class="row">
-
     <div class="col-xs-12 col-sm-6">
-      <h3 class="red-title"><strong><%= @band.name %>'s description :</strong></h3>
-      <ul class="list-unstyled">
-        <li><%= @band.description %></li>
-        <li><%= @band.music_style %></li>
-        <li><%= @band.number_of_musicians %> musicians</li>
-        <li><%= @band.price_per_hour %></li>
-      </ul>
+      <div class="band-description">
+        <h3 class="red-title"><strong>Get in touch with <%= @band.name %> :</strong></h3>
+        <ul class="list-unstyled">
+          <p>Music style : <strong><%= @band.music_style %></strong></p>
+          <p>Price per hour : <strong><%= @band.price_per_hour %> €</strong></p>
+          <p>Number of musicians : <strong><%= @band.number_of_musicians %></strong></p>
+        </br>
+          <h4>The band story :</h4>
+          <p><%= current_user.band.description %></p>
+        </ul>
+      </div>
     </div>
 
     <div class="col-xs-12 col-sm-6">
       <div class="form-booking">
-        <h4>Book us !</h4>
+        <h3 class="title-booking">Book us !</h3>
         <%= simple_form_for [ @band, @booking ] do |f| %>
           <%= f.input :date %>
           <%= f.input :location, label: "City" %>
           <%= f.submit "Book us", class: "submit" %>
         <% end %>
-        <p>Total : <%= @band.price_per_hour %> €</p>
+        <p>Total : <strong><%= @band.price_per_hour %> €</strong></p>
       </div>
     </div>
   </div>
 
+
   <div class="review">
-      <h2 class="text-center"><strong>Comments</strong> (<%= @band.reviews.count %>)</h2>
+      <h2 class="text-center title-comments"><strong>Comments</strong> (<%= @band.reviews.count %>)</h2>
       <a name="anchor-review"></a>
       <div class="posted-message">
         <% if @band.reviews.any? %>
@@ -86,11 +90,11 @@
 
   <div class="downpage-links">
     <% if @band.previous.presence %>
-      <p><%= link_to "Previous offer", @band.previous %></p>
+      <p><%= link_to "Previous band", @band.previous %></p>
     <% end %>
       <p><%= link_to "Go back to list", bands_path %></p>
     <% if @band.next.presence %>
-      <p><%= link_to "Next offer", @band.next %></p>
+      <p><%= link_to "Next band", @band.next %></p>
     <% end %>
   </div>
 

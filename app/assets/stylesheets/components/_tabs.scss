@@ -8,18 +8,16 @@
 }
 
 .profile-header-container p {
-    margin-top: 10px;
+    margin-bottom: 10px;
     color: black;
     font-size: 28px;
-    font-weight: bold;
     letter-spacing: -1px;
 }
 
-.profile-header-container h2 {
+.profile-header-container h4 {
     color: black;
-    font-size: 18px;
-    margin-bottom: 0;
     letter-spacing: -1px;
+    margin-top: 20px;
 }
 
 /* Your tabs CSS code here */
@@ -36,6 +34,7 @@
   cursor: pointer;
   text-decoration: none;
   opacity: 0.8;
+  color: white;
 }
 .tabs h3 {
   font-size: 17px;
@@ -44,7 +43,7 @@
   margin-bottom: -3px;
 }
 .tab {
-  background: #989a9b;
+  background: #ff4e4e;
   flex: 0 0 25%;
   text-align: center;
   padding: 20px 0;

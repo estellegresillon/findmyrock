@@ -1,0 +1,43 @@
+.title-create {
+  margin-top: 80px;
+  margin-bottom: 40px;
+}
+#band_name, #band_price_per_hour, #review_rating, #review_commenter, #band_number_of_musicians, #band_music_style {
+  height: 50px;
+  background-color: white;
+  border: 1px solid lightgrey;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+#review_content, #band_description {
+  height: 100px;
+  background-color: white;
+  border: 1px solid lightgrey;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+#booking_date_1i, #booking_date_2i, #booking_date_3i, #booking_location {
+  height: 50px;
+  background-color: white;
+  border: 1px solid lightgrey;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+.title-booking {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.form-booking {
+  background-color: white;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  z-index: 2;
+  margin-top: -80px;
+  padding: 20px 40px 20px 40px;
+  transition: all 0.3s ease;
+  margin-bottom: 0px;
+}
+.form-booking:hover {
+  margin-top: -90px;
+  box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
+}
