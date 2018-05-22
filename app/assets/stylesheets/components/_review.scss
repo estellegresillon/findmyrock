@@ -1,0 +1,98 @@
+.posted-message {
+  background-color: #FAFAFA;
+  padding: 5px 20px 0px 20px;
+  margin: 50px 0px 50px 0px;
+  -webkit-box-shadow: 1px 1px 3px #F0F0F0;
+  box-shadow: 1px 1px 3px #F0F0F0;
+  position: relative;
+}
+.message-box {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(220,224,244,0.4);
+  padding: 0px 10px 10px 10px;
+}
+.posted-message:last-child {
+  border-bottom: none;
+}
+.message-body {
+  flex-grow: 1;
+}
+.message-name {
+  padding-left: 10px;
+  min-width: 100px;
+}
+.message-name h3 {
+  font-size: 14px;
+  margin-bottom: 0px;
+}
+.message-name p {
+  font-size: 13px;
+  line-height: 0.6;
+  color: grey;
+  opacity: 0.6;
+  margin-top: 5px;
+}
+.message-body {
+  padding-left: 10px;
+  font-size: 13px;
+  color: rgba(0,0,0,0.7);
+}
+.message-body p {
+  font-size: 14px;
+  margin: 6px 0;
+}
+.message-rating {
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+}
+.rating-title {
+  color: grey;
+  font-weight: lighter;
+}
+.rating {
+  margin-top: -10px;
+  font-weight: bolder;
+  align-self: flex-end;
+  color: #90DFAA;
+  font-size: 24px;
+}
+.delete-review {
+  margin-top: 5px;
+  img {
+    height: 10px;
+    width: 10px;
+  }
+}
+.avatar-large {
+  width: 50px;
+  border-radius: 50%;
+}
+.no-comments {
+  font-size: 14px;
+  margin: 0 auto;
+  padding: 10px 0px 10px 0px;
+}
+a {
+  font-size: 14px;
+  color: black;
+  text-decoration: none;
+  a:hover {
+    color: black;
+  }
+}
+
+.form-review {
+  padding: 30px 70px 50px 70px;
+}
+
+
+.green-title {
+  color: #90DFAA;
+}
+.average-rating {
+  padding: 20px;
+  font-weight: 700;
+}
