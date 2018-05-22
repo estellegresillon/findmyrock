@@ -21,14 +21,16 @@
       </div>
 
     <h3>MY BOOKINGS</h3>
-    <p>Group : <%= Booking.band.name %></p>
-    <p>Playing the <%= Booking.date %></p>
-    <p>In <%= Booking.location %></p>
-    <p>For <%= Booking.band.service_duration %> minutes</p>
-    <p>Due : <%= Booking.band.price_per_hour %> €</p>
+    <% @bookings.each do |c| %>
+      <p>Group : <%= c.band.name %></p>
+      <p>Playing the <%= c.date %></p>
+      <p>In <%= c.location %></p>
+      <p>For <%= c.band.service_duration %> minutes</p>
+      <p>Due : <%= c.band.price_per_hour %> €</p>
+      <%= link_to 'Delete booking', booking_path(c), method: :delete, class: "btn-yellow" %>
+    <% end %>
 
       <%= link_to "Book a band", bands_path, class: "btn-yellow" %>
-      <%= link_to 'Delete booking', booking_path(current_user), method: :delete, class: "btn-yellow" %>
 
 
   </div>

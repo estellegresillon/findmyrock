@@ -6,11 +6,11 @@ Rails.application.routes.draw do
   #get '/profile/:id', redirect: '/profile'
   get 'profile', to: 'profiles#show'
   #delete 'bands/destroy', to: 'bands#destroy'
-  delete 'booking', to: 'bookings#destroy'
   resources :profile, only: :show
   resources :bands do
-    resources :bookings
+    resources :bookings, only: :create
   end
 
+  resources :bookings, only: :destroy
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

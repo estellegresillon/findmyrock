@@ -1,7 +1,7 @@
 class ProfilesController < ApplicationController
 
   def show
-    @booking = Booking.all
+    @bookings = current_user.bookings
   end
 
 end
