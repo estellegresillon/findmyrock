@@ -1,0 +1,30 @@
+.content {
+  padding-top: 100px;
+  margin: 0 auto;
+  width: 70%;
+}
+.downpage-links {
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  a {
+  font-size: 14px;
+  color: black;
+  text-decoration: none;
+  a:hover, a:focus, a:active {
+    color: black;
+    }
+  }
+}
+#booking_date_1i, #booking_date_2i, #booking_date_3i, #booking_location {
+  height: 50px;
+  background-color: white;
+  border: 1px solid lightgrey;
+  padding-left: 10px;
+  margin-bottom: 30px;
+}
+.form-booking {
+  padding: 30px;
+  background-color: #FAFAFA;
+}

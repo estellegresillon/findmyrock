@@ -1,0 +1,23 @@
+.banner-home {
+  color: white;
+  text-align: center;
+  height: calc(100vh - 70px);
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+.banner-home h1 {
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+.banner-home h2 {
+  font-size: 24px;
+  color: white;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}

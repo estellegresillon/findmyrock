@@ -13,7 +13,7 @@ before_action :band_params, only: [:create, :update]
     @band = Band.new(band_params)
     @band.user = current_user
     if @band.save
-      redirect_to profile_path
+      redirect_to band_path(@band)
     else
       render :new
     end

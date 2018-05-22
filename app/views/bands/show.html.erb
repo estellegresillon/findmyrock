@@ -1,0 +1,43 @@
+<div class="banner-home" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('https://media.guim.co.uk/67bfc01de64daa10687cc2c7103b9bcd93f22138/0_0_4896_3264/1000.jpg'); height: 50vh; background-position: center;">
+
+    <h1><%= @band.name %></h1>
+
+</div>
+
+<div class="content">
+  <div class="row">
+
+    <div class="col-xs-12 col-sm-6">
+      <h3 class="green-title"><strong><%= @band.name %>'s description :</strong></h3>
+      <ul class="list-unstyled">
+        <li><%= @band.description %></li>
+        <li><%= @band.music_style %></li>
+        <li><%= @band.number_of_musicians %> musicians</li>
+        <li><%= @band.price %></li>
+      </ul>
+    </div>
+
+    <div class="col-xs-12 col-sm-6">
+      <div class="form-booking">
+        <h4>Book us !</h4>
+        <%= simple_form_for [ @band, @booking ] do |f| %>
+          <%= f.input :date %>
+          <%= f.input :location, label: "City" %>
+          <%= f.submit "Book us", class: "submit" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="downpage-links">
+    <% if @band.previous.presence %>
+      <p><%= link_to "Previous offer", @band.previous %></p>
+    <% end %>
+      <p><%= link_to "Go back to list", bands_path %></p>
+    <% if @band.next.presence %>
+      <p><%= link_to "Next offer", @band.next %></p>
+    <% end %>
+  </div>
+
+</div>

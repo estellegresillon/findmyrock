@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Montserrat:400,100,300,700,500");
+
+.cards {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+  .card {
+    flex: 0 0 auto;
+  }
+}
+.card {
+  height: 200px;
+  width: 300px;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  color: white;
+  position: relative;
+  background-color: white;
+  transition: all 0.3s ease;
+  margin: 10px;
+  text-align: center;
+  background-size: cover !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.card:hover {
+  box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
+  margin-top: -5px;
+
+}
+
+.card h2 {
+  font-family: "Montserrat";
+  font-size: 16px;
+  left: 20px;
+  text-transform: capitalize;
+  color: white;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.card p {
+  font-family: "Montserrat";
+  font-size: 13px;
+  left: 20px;
+  text-transform: capitalize;
+  color: white;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  opacity: 0;
+}

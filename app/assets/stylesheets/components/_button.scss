@@ -9,6 +9,10 @@
   margin-bottom: 20px;
   font-weight: bolder;
   color: white;
+  a, a:hover {
+    color: white;
+    text-decoration: none;
+  }
 }
 
 .btn-yellow:hover {
