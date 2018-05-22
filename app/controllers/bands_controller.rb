@@ -20,6 +20,7 @@ before_action :band_params, only: [:create, :update]
   end
 
   def show
+    @review = Review.new
     @band = Band.find(params[:id])
     @booking = Booking.new
   end
