@@ -18,7 +18,7 @@ first_user = User.create(
 first_band = Band.create(
   name: Faker::Superhero.name,
   description: Faker::Lorem.sentence,
-  price: Random.rand(100..15000),
+  price_per_hour: Random.rand(100..15000),
   number_of_musicians: Random.rand(1..6),
   service_duration: [30, 45, 60, 90, 120, 180].sample,
   music_style: ["Rock", "Metal", "Pop"].sample,
@@ -43,7 +43,7 @@ first_band = Band.create(
   new_band = Band.create(
     name: Faker::Superhero.name,
     description: Faker::Lorem.sentence,
-    price: Random.rand(100..15000),
+    price_per_hour: Random.rand(100..15000),
     number_of_musicians: Random.rand(1..6),
     service_duration: [30, 45, 60, 90, 120, 180].sample,
     music_style: ["Rock", "Metal", "Pop"].sample,

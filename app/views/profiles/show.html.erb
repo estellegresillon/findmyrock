@@ -21,11 +21,11 @@
       </div>
 
     <h3>MY BOOKINGS</h3>
-    <p>Group : <%= Booking.last.band.name %></p>
-    <p>Playing the <%= Booking.last.date %></p>
-    <p>In <%= Booking.last.location %></p>
-    <p>For <%= Booking.last.band.service_duration %> minutes</p>
-    <p>Due : <%= Booking.last.band.price_per_hour %> €</p>
+    <p>Group : <%= Booking.band.name %></p>
+    <p>Playing the <%= Booking.date %></p>
+    <p>In <%= Booking.location %></p>
+    <p>For <%= Booking.band.service_duration %> minutes</p>
+    <p>Due : <%= Booking.band.price_per_hour %> €</p>
 
       <%= link_to "Book a band", bands_path, class: "btn-yellow" %>
       <%= link_to 'Delete booking', booking_path(current_user), method: :delete, class: "btn-yellow" %>
