@@ -6,8 +6,12 @@
       <% else %>
         <%= image_tag "avatar_default.jpg", class: "img-circle" %>
       <% end  %>
-      <p>Hello, <%= current_user.first_name %> <%= current_user.last_name %>
-      <h2>Student @LeWagon</h2>
+        <h2>Hello, <%= current_user.first_name %> <%= current_user.last_name %></h2>
+      <% if current_user.band.present? %>
+        <h4>- Member of <%= current_user.band.name %> - <%= link_to "Visit page",  band_path(current_user) %></h4>
+      <% else %>
+        <h4><%= link_to "Add your band", new_band_path %></h4>
+      <% end %>
     </div>
     <div class="tabs">
       <a class="tab active" data-toggle="tab" href="#my-band">
@@ -25,35 +29,34 @@
 
 <div class="tab-content">
 
-    <div id="my-band" class="tab-pane fade in active content">
-      <h3>MY BAND</h3>
-      <% if current_user.band %>
-        <p><%= current_user.band.name %></p>
-        <p><%= current_user.band.music_style %></p>
-        <p><%= current_user.band.price_per_hour %></p>
-        <p><%= current_user.band.service_duration %></p>
-        <p><%= current_user.band.number_of_musicians %></p>
-        <p><%= current_user.band.description %></p>
-      <% else %>
-        <%= link_to "Add your band", new_band_path, class: "btn-yellow" %>
-      <% end %>
-
+  <div id="my-band" class="tab-pane fade in active content">
+    <h3>MY BAND</h3>
+    <% if current_user.band %>
+      <p>Band's name : <strong><%= current_user.band.name %></strong></p>
+      <p>Music style : <strong><%= current_user.band.music_style %></strong></p>
+      <p>Price per hour : <strong><%= current_user.band.price_per_hour %> €</strong></p>
+      <p>Number of musicians : <strong><%= current_user.band.number_of_musicians %></strong></p>
+    </br>
+      <h4>The band story :</h4>
+      <p><%= current_user.band.description %></p>
       <div class="buttons">
-        <%= link_to "Edit band",  edit_band_path(current_user), class: "btn-yellow" %>
-        <%= link_to 'Delete band', band_path(current_user), method: :delete, class: "btn-yellow" %>
+        <%= link_to "Edit band",  edit_band_path(current_user), class: "edit-delete-button" %>
+        <%= link_to 'Delete band', band_path(current_user), method: :delete, class: "edit-delete-button" %>
       </div>
-
-
+    <% else %>
+      <p><strong>Hello there !</strong><p></br>
+      <p>We know how cool it is to book all of your favorite bands, but why don't you also join the crowd ?<p>
+      <p>Ready to share your love for music ?</p></br>
+      <%= link_to "Add your band", new_band_path, class: "btn-yellow" %>
+    <% end %>
   </div>
 
   <div id="my-bookings" class="tab-pane fade content">
-
     <h3>MY BOOKINGS</h3>
     <% @bookings.each do |c| %>
       <p>Group : <%= c.band.name %></p>
       <p>Playing the <%= c.date %></p>
       <p>In <%= c.location %></p>
-      <p>For <%= c.band.service_duration %> minutes</p>
       <p>Due : <%= c.band.price_per_hour %> €</p>
       <%= link_to 'Delete booking', booking_path(c), method: :delete, class: "btn-yellow" %>
       <% if c.status == 'confirmed' %>
@@ -62,10 +65,7 @@
       <span class="label label-warning">Pending</span>
       <% end %>
     <% end %>
-
-
-      <%= link_to "Book a band", bands_path, class: "btn-yellow" %>
-
+    <%= link_to "Book a band", bands_path, class: "btn-yellow" %>
   </div>
 
   <div id="my-clients" class="tab-pane fade content">
@@ -83,9 +83,7 @@
           <% end %>
         <% end %>
       <% end %>
-
   </div>
-
 </div>
 
 

@@ -1,3 +1,6 @@
+.review {
+  margin-top: 100px;
+}
 .posted-message {
   background-color: #FAFAFA;
   padding: 5px 20px 0px 20px;
@@ -56,7 +59,7 @@
   margin-top: -10px;
   font-weight: bolder;
   align-self: flex-end;
-  color: #c62a1d;
+  color: #49c5b6;
   font-size: 24px;
 }
 .delete-review {
@@ -81,12 +84,20 @@ a {
 }
 
 .form-review {
-  padding: 30px 70px 50px 70px;
+  padding: 30px 70px 40px 70px;
 }
 .red-title {
-  color: #c62a1d;
+  color: #ff4e4e;
 }
 .average-rating {
   padding: 20px;
   font-weight: 700;
+}
+.band-description {
+  padding-left: 10px;
+}
+.band-description p {
+  font-size: 14px;
+  text-align: justify;
+  text-justify: inter-word;
 }
