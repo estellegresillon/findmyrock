@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :destroy]
+  before_action :set_booking, only: [:show, :destroy, :update]
 
   def new
     @booking = Booking.new
@@ -24,6 +24,14 @@ class BookingsController < ApplicationController
     redirect_to profile_path
   end
 
+  def update
+    if @booking.update(booking_params)
+      redirect_to profile_path, notice: "Bookings updated !"
+    else
+      render :edit
+    end
+  end
+
   private
 
   def set_booking
@@ -32,7 +40,7 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:date, :price_per_hour, :location, :band_id, :user_id)
+    params.require(:booking).permit(:date, :price_per_hour, :location, :band_id, :user_id, :status)
   end
 
 end
