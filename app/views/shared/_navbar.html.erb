@@ -17,7 +17,9 @@
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <div data-toggle="dropdown">
+            <%= image_tag "avatar_default.jpg", class: "avatar" %>
+        </div>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to "/profile" do %>
@@ -36,6 +38,7 @@
             </li>
           </ul>
         </div>
+
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
