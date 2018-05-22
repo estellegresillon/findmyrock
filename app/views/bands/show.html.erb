@@ -12,7 +12,7 @@
   <div class="row">
 
     <div class="col-xs-12 col-sm-6">
-      <h3 class="green-title"><strong><%= @band.name %>'s description :</strong></h3>
+      <h3 class="red-title"><strong><%= @band.name %>'s description :</strong></h3>
       <ul class="list-unstyled">
         <li><%= @band.description %></li>
         <li><%= @band.music_style %></li>
@@ -58,7 +58,7 @@
               </div>
           </div>
           <% end %>
-          <p class="green-title average-rating"><%= @band.name %> has an average rating of
+          <p class="red-title average-rating"><%= @band.name %> has an average rating of
             <% average = @band.reviews.average("rating") %>
             <% if (average / average.floor) == 1 %>
               <%= average.round %>/5
