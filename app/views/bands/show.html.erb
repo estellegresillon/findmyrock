@@ -1,4 +1,8 @@
-<div class="banner-home" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('https://media.guim.co.uk/67bfc01de64daa10687cc2c7103b9bcd93f22138/0_0_4896_3264/1000.jpg'); height: 50vh; background-position: center;">
+<% if @band.photo.present? %>
+  <div class="banner-home" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('<%= cl_image_path @band.photo, crop: :fill %>'); height: 50vh; background-position: center;">
+<% else %>
+  <div class="banner-home" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('https://media.guim.co.uk/67bfc01de64daa10687cc2c7103b9bcd93f22138/0_0_4896_3264/1000.jpg'); height: 50vh; background-position: center;">
+<% end  %>
 
     <h1><%= @band.name %></h1>
 
@@ -26,6 +30,56 @@
           <%= f.submit "Book us", class: "submit" %>
         <% end %>
         <p>Total : <%= @band.price_per_hour %> €</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="review">
+      <h2 class="text-center"><strong>Comments</strong> (<%= @band.reviews.count %>)</h2>
+      <a name="anchor-review"></a>
+      <div class="posted-message">
+        <% if @band.reviews.any? %>
+          <% @band.reviews.each do |r| %>
+            <div class="message-box">
+              <div class="avatar-large">
+                <%= image_tag "cocktail-reviews.png", id: "review-picture" %>
+              </div>
+              <div class="message-name">
+                <h4><%= r.commenter %></h4>
+                <p><%= r.created_at.to_time.strftime('%B %e') %></p>
+                <p><%= r.created_at.to_time.strftime('at %l:%M %p') %></p>
+              </div>
+              <div class="message-body">
+                <p><%= r.content %></p>
+              </div>
+              <div class="message-rating">
+                <p class="rating-title">Rating</p>
+                <p class="rating"><%= r.rating %>/5</p>
+              </div>
+          </div>
+          <% end %>
+          <p class="green-title average-rating"><%= @band.name %> has an average rating of
+            <% average = @band.reviews.average("rating") %>
+            <% if (average / average.floor) == 1 %>
+              <%= average.round %>/5
+            <% else %>
+              <%= average.round(1) %>/5
+            <% end %>
+          </p>
+        <% else %>
+          <p class="no-comments">There are no comments yet.</p>
+        <% end %>
+      </div>
+
+      <div class="posted-message">
+        <div class="form-review">
+          <h3>Add a review :</h3>
+          <%= simple_form_for [ @band, @review ] do |f| %>
+            <%= f.input :commenter, label: "Your name"%>
+            <%= f.input :rating %>
+            <%= f.input :content, label: "Your review" %>
+            <%= f.submit "Add a review", class: "submit" %>
+          <% end %>
       </div>
     </div>
   </div>
