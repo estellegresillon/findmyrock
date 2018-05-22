@@ -1,6 +1,5 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+  <div class="content">
 
     <h2>My dashboard</h2>
     <p>Hello, <%= current_user.first_name %> <%= current_user.last_name %>
@@ -20,13 +19,17 @@
       <%= link_to "Edit band",  edit_band_path(current_user), class: "btn-yellow" %>
       <%= link_to 'Delete band', band_path(current_user), method: :delete, class: "btn-yellow" %>
       </div>
-    </div>
+
     <h3>MY BOOKINGS</h3>
+    <p>Group : <%= Booking.last.band.name %></p>
+    <p>Playing the <%= Booking.last.date %></p>
+    <p>In <%= Booking.last.location %></p>
+    <p>For <%= Booking.last.band.service_duration %> minutes</p>
+    <p>Due : <%= Booking.last.band.price_per_hour %> €</p>
 
       <%= link_to "Book a band", bands_path, class: "btn-yellow" %>
-    <% end %>
-    <%= link_to 'Delete booking', booking_path(current_user), method: :delete, class: "btn-yellow" %>
+      <%= link_to 'Delete booking', booking_path(current_user), method: :delete, class: "btn-yellow" %>
 
-    </div>
+
   </div>
 </div>
