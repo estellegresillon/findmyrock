@@ -30,6 +30,56 @@
     </div>
   </div>
 
+  <div class="review">
+      <h2 class="text-center"><strong>Comments</strong> (<%= @band.reviews.count %>)</h2>
+      <a name="anchor-review"></a>
+      <div class="posted-message">
+        <% if @band.reviews.any? %>
+          <% @band.reviews.each do |r| %>
+            <div class="message-box">
+              <div class="avatar-large">
+                <%= image_tag "cocktail-reviews.png", id: "review-picture" %>
+              </div>
+              <div class="message-name">
+                <h4><%= r.commenter %></h4>
+                <p><%= r.created_at.to_time.strftime('%B %e') %></p>
+                <p><%= r.created_at.to_time.strftime('at %l:%M %p') %></p>
+              </div>
+              <div class="message-body">
+                <p><%= r.content %></p>
+              </div>
+              <div class="message-rating">
+                <p class="rating-title">Rating</p>
+                <p class="rating"><%= r.rating %>/5</p>
+              </div>
+          </div>
+          <% end %>
+          <p class="green-title average-rating"><%= @band.name %> has an average rating of
+            <% average = @band.reviews.average("rating") %>
+            <% if (average / average.floor) == 1 %>
+              <%= average.round %>/5
+            <% else %>
+              <%= average.round(1) %>/5
+            <% end %>
+          </p>
+        <% else %>
+          <p class="no-comments">There are no comments yet.</p>
+        <% end %>
+      </div>
+
+      <div class="posted-message">
+        <div class="form-review">
+          <h3>Add a review :</h3>
+          <%= simple_form_for [ @band, @review ] do |f| %>
+            <%= f.input :commenter, label: "Your name"%>
+            <%= f.input :rating %>
+            <%= f.input :content, label: "Your review" %>
+            <%= f.submit "Add a review", class: "submit" %>
+          <% end %>
+      </div>
+    </div>
+  </div>
+
   <div class="downpage-links">
     <% if @band.previous.presence %>
       <p><%= link_to "Previous offer", @band.previous %></p>

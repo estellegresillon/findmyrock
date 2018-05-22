@@ -32,6 +32,15 @@
 
       <%= link_to "Book a band", bands_path, class: "btn-yellow" %>
 
+      <h3>PEOPLE WHO BOOKED ME</h3>
+
+      <% @peoplewhobookedme.each do |c| %>
+        <p>Client : <%= c.user.first_name %></p>
+        <p>Contact : <%= c.user.email %></p>
+        <%= link_to 'Cancel booking', booking_path(c), method: :delete, class: "btn-yellow" %>
+      <% end %>
+
+
 
   </div>
 </div>
