@@ -1,0 +1,61 @@
+/* Your profile header CSS code here */
+.profile-header-wrapper {
+    background: #f4f4f4;
+}
+
+.profile-header-infos {
+    padding: 20px 0;
+}
+
+.profile-header-container p {
+    margin-top: 10px;
+    color: black;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+.profile-header-container h2 {
+    color: black;
+    font-size: 18px;
+    margin-bottom: 0;
+    letter-spacing: -1px;
+}
+
+/* Your tabs CSS code here */
+.tabs {
+  background: #f4f4f4;
+  display: flex;
+  padding: 10px 10px 0 10px;
+  justify-content: center;
+}
+.tabs a {
+  color: white;
+}
+.tabs a:hover {
+  cursor: pointer;
+  text-decoration: none;
+  opacity: 0.8;
+}
+.tabs h3 {
+  font-size: 17px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: -3px;
+}
+.tab {
+  background: #989a9b;
+  flex: 0 0 25%;
+  text-align: center;
+  padding: 20px 0;
+}
+.tab:first-child {
+  border-radius: 10px 0 0 0;
+}
+.tab:last-child {
+  border-radius: 0 10px 0 0;
+}
+.tab.active {
+  background: white !important;
+  color: black;
+}
