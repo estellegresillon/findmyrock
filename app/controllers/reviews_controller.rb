@@ -8,6 +8,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to band_path(@band, anchor: "anchor-review")
     else
+      @booking = Booking.new
       render "bands/show"
     end
   end
