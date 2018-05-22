@@ -1,7 +1,11 @@
 <div class="container">
   <div class="content">
 
-    <%= cl_image_tag(current_user.band.photo, crop: :fill, class: "img-circle") %>
+    <% if @avatar_band.present? %>
+      <%= cl_image_tag(@avatar_band, crop: :fill, class: "img-circle") %>
+    <% else %>
+      <%= image_tag "avatar_default.jpg", class: "img-circle" %>
+    <% end  %>
 
 
     <h2>My dashboard</h2>
