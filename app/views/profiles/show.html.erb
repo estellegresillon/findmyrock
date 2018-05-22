@@ -35,6 +35,13 @@
       <p>For <%= c.band.service_duration %> minutes</p>
       <p>Due : <%= c.band.price_per_hour %> €</p>
       <%= link_to 'Delete booking', booking_path(c), method: :delete, class: "btn-yellow" %>
+      <% if c.status == 'confirmed' %>
+      <span class="label label-success">Validate</span>
+      <% else %>
+      <span class="label label-warning">Pending</span>
+      <% end %>
+
+
     <% end %>
 
       <%= link_to "Book a band", bands_path, class: "btn-yellow" %>
@@ -45,7 +52,15 @@
         <p>Client : <%= c.user.first_name %></p>
         <p>Contact : <%= c.user.email %></p>
         <%= link_to 'Cancel booking', booking_path(c), method: :delete, class: "btn-yellow" %>
+        <% if c.status != 'confirmed' %>
+          <%= simple_form_for c do |f| %>
+            <%= f.input :status, as: :hidden, input_html: { value: 'confirmed'} %>
+            <%= f.submit 'Accept', class: 'btn btn-primary' %>
+          <% end %>
+        <% end %>
       <% end %>
 
   </div>
 </div>
+
+
