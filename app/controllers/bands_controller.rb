@@ -46,6 +46,7 @@ before_action :set_band, only: [:show, :update]
     @band = current_user.band
     @band.destroy
     redirect_to profile_path
+    authorize @band
   end
 
   private
