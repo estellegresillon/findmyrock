@@ -1,6 +1,9 @@
 <div class="container">
   <div class="content">
 
+    <%= cl_image_tag(current_user.band.photo, crop: :fill, class: "img-circle") %>
+
+
     <h2>My dashboard</h2>
     <p>Hello, <%= current_user.first_name %> <%= current_user.last_name %>
     <h3>MY BAND</h3>
@@ -39,8 +42,6 @@
         <p>Contact : <%= c.user.email %></p>
         <%= link_to 'Cancel booking', booking_path(c), method: :delete, class: "btn-yellow" %>
       <% end %>
-
-
 
   </div>
 </div>

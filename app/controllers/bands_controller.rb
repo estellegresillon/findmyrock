@@ -49,7 +49,7 @@ before_action :band_params, only: [:create, :update]
   private
 
   def band_params
-    params.require(:band).permit(:name, :description, :music_style, :number_of_musicians, :price_per_hour, :service_duration, :user_id)
+    params.require(:band).permit(:name, :description, :music_style, :number_of_musicians, :price_per_hour, :service_duration, :user_id, :photo)
   end
 
 
