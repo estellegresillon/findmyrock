@@ -1,5 +1,13 @@
 <div class="banner-home" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('https://media.guim.co.uk/67bfc01de64daa10687cc2c7103b9bcd93f22138/0_0_4896_3264/1000.jpg'); height: 100vh; background-position: center;">
     <h1>HELLO.</h1>
     <h2><span id="title-typed-text"></span></h2>
-    <%= link_to "Discover", bands_path, class: "btn-yellow" %>
+    <%= form_tag bands_path do %>
+      <%= text_field_tag :date , nil, placeholder: "Date", %>
+      <%= text_field_tag :city , nil, placeholder: "City" %>
+      <%= text_field_tag :style , nil, placeholder: "Style" %>
+      <%= text_field_tag :budget , nil, placeholder: "Budget" %>
+    <% end %>
+      <%= submit_tag "Discover", class: "btn-yellow" %>
+
+
 </div>
