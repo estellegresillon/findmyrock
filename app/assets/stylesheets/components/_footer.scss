@@ -11,6 +11,9 @@
   display: flex;
   align-items: center;
 }
+.footer-copyright {
+  font-size: 14px;
+}
 .footer-links a {
   color: black;
   opacity: 0.15;
@@ -22,5 +25,5 @@
   opacity: 1;
 }
 .footer .fa-heart {
-  color: #D23333;
+  color: #ff4e4e;
 }

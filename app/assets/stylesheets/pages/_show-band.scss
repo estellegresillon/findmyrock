@@ -1,7 +1,7 @@
 .content {
-  padding-top: 100px;
+  padding: 30px;
   margin: 0 auto;
-  width: 70%;
+  max-width: 1000px;
 }
 .downpage-links {
   margin-bottom: 100px;
@@ -17,14 +17,39 @@
     }
   }
 }
-#booking_date_1i, #booking_date_2i, #booking_date_3i, #booking_location {
-  height: 50px;
-  background-color: white;
-  border: 1px solid lightgrey;
-  padding-left: 10px;
-  margin-bottom: 30px;
+a {
+  text-decoration: none;
+  color: black;
 }
-.form-booking {
-  padding: 30px;
-  background-color: #FAFAFA;
+a:hover {
+  color: black
+}
+
+h1 {
+  font-family: "Montserrat";
+  font-size: 50px;
+  font-weight: bolder;
+}
+h2 {
+  font-family: "Montserrat";
+  font-weight: bolder;
+  font-size: 24px;
+}
+h3 {
+  font-family: "Montserrat";
+  font-size: 20px;
+  font-weight: bolder;
+  margin-bottom: 40px;
+}
+h4 {
+  font-family: "Montserrat";
+  font-size: 16px;
+}
+p {
+  font-family: "Montserrat";
+  font-size: 14px;
+}
+.jump-a-line {
+  margin-top: 30px;
+  margin-bottom: 100px;
 }

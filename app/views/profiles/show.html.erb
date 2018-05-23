@@ -1,51 +1,96 @@
-<div class="container">
-  <div class="content">
+<div class="profile-header-wrapper">
+  <div class="container profile-header-container text-center">
+    <div class="profile-header-infos">
+      <% if @avatar_band.present? %>
+        <%= cl_image_tag(@avatar_band, crop: :fill, class: "img-circle") %>
+      <% else %>
+        <%= image_tag "avatar_default.jpg", class: "img-circle" %>
+      <% end  %>
+        <h2>Hello, <%= current_user.first_name %> <%= current_user.last_name %></h2>
+      <% if current_user.band.present? %>
+        <h4>- Member of <%= current_user.band.name %> - <%= link_to "Visit page",  band_path(current_user) %></h4>
+      <% else %>
+        <h4><%= link_to "Add your band", new_band_path %></h4>
+      <% end %>
+    </div>
+    <div class="tabs">
+      <a class="tab active" data-toggle="tab" href="#my-band">
+        <h3>My band</h3>
+      </a>
+      <a class="tab" data-toggle="tab" href="#my-bookings">
+        <h3>My bookings</h3>
+      </a>
+      <a class="tab" data-toggle="tab" href="#my-clients">
+        <h3>My clients</h3>
+      </a>
+    </div>
+  </div>
+</div>
 
-    <% if @avatar_band.present? %>
-      <%= cl_image_tag(@avatar_band, crop: :fill, class: "img-circle") %>
-    <% else %>
-      <%= image_tag "avatar_default.jpg", class: "img-circle" %>
-    <% end  %>
+<div class="tab-content">
 
-
-    <h2>My dashboard</h2>
-    <p>Hello, <%= current_user.first_name %> <%= current_user.last_name %>
+  <div id="my-band" class="tab-pane fade in active content">
     <h3>MY BAND</h3>
     <% if current_user.band %>
-      <p><%= current_user.band.name %></p>
-      <p><%= current_user.band.music_style %></p>
-      <p><%= current_user.band.price_per_hour %></p>
-      <p><%= current_user.band.service_duration %></p>
-      <p><%= current_user.band.number_of_musicians %></p>
+      <p>Band's name : <strong><%= current_user.band.name %></strong></p>
+      <p>Located in <strong><%= current_user.band.location %></strong></p>
+      <p>Music style : <strong><%= current_user.band.music_style %></strong></p>
+      <p>Price per hour : <strong><%= current_user.band.price_per_hour %> €</strong></p>
+      <p>Number of musicians : <strong><%= current_user.band.number_of_musicians %></strong></p>
+    </br>
+      <h4>The band story :</h4>
       <p><%= current_user.band.description %></p>
+      <div class="buttons">
+        <%= link_to "Edit band",  edit_band_path(current_user), class: "edit-delete-button" %>
+        <%= link_to 'Delete band', band_path(current_user), method: :delete, class: "edit-delete-button" %>
+      </div>
     <% else %>
+      <p><strong>Hello there !</strong><p></br>
+      <p>We know how cool it is to book all of your favorite bands, but why don't you also join the crowd ?<p>
+      <p>Ready to share your love for music ?</p></br>
       <%= link_to "Add your band", new_band_path, class: "btn-yellow" %>
     <% end %>
+  </div>
 
-    <div class="buttons">
-      <%= link_to "Edit band",  edit_band_path(current_user), class: "btn-yellow" %>
-      <%= link_to 'Delete band', band_path(current_user), method: :delete, class: "btn-yellow" %>
-      </div>
-
+  <div id="my-bookings" class="tab-pane fade content">
     <h3>MY BOOKINGS</h3>
     <% @bookings.each do |c| %>
       <p>Group : <%= c.band.name %></p>
       <p>Playing the <%= c.date %></p>
       <p>In <%= c.location %></p>
-      <p>For <%= c.band.service_duration %> minutes</p>
       <p>Due : <%= c.band.price_per_hour %> €</p>
       <%= link_to 'Delete booking', booking_path(c), method: :delete, class: "btn-yellow" %>
+      <% if c.status == 'confirmed' %>
+      <span class="label label-success">Validate</span>
+      <% elsif c.status == 'decline' %>
+      <span class="label label-danger">Decline</span>
+      <% else %>
+      <span class="label label-warning">Pending</span>
+      <% end %>
     <% end %>
+    <%= link_to "Book a band", bands_path, class: "btn-yellow" %>
+  </div>
 
-      <%= link_to "Book a band", bands_path, class: "btn-yellow" %>
+  <div id="my-clients" class="tab-pane fade content">
 
-      <h3>PEOPLE WHO BOOKED ME</h3>
+      <h3>MY CLIENTS</h3>
 
       <% @peoplewhobookedme.each do |c| %>
         <p>Client : <%= c.user.first_name %></p>
         <p>Contact : <%= c.user.email %></p>
         <%= link_to 'Cancel booking', booking_path(c), method: :delete, class: "btn-yellow" %>
+        <% if c.status.nil?  %>
+          <%= simple_form_for c do |f| %>
+            <%= f.input :status, as: :hidden, input_html: { value: 'confirmed'} %>
+            <%= f.submit 'Accept', class: 'btn btn-primary' %>
+          <% end %>
+          <%= simple_form_for c do |f| %>
+            <%= f.input :status, as: :hidden, input_html: { value: 'decline'} %>
+            <%= f.submit 'Decline', class: 'btn btn-danger' %>
+          <% end %>
+        <% end %>
       <% end %>
 
   </div>
 </div>
+

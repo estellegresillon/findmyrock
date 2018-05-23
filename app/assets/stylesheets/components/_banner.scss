@@ -21,9 +21,19 @@
   color: white;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
 }
+
 #searchbar-band {
   outline-color: white;
   height: 50px !important;
   padding-left: 10px;
   margin-left: 5px;
+  }
+
+#banner-video-bg {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -10;
 }

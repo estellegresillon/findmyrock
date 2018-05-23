@@ -1,7 +1,27 @@
 .btn-yellow {
-  background-color: #c62a1d;
+  background-color: #ff4e4e;
+  border: 2px solid #ff4e4e;
   width: 220px;
-  font-color: white;
+  padding: 12px 20px;
+  border-radius: 25px;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-weight: bolder;
+  color: white;
+  text-decoration: none;
+}
+.btn-yellow:hover {
+  background-color: #ef7070;
+  border: 2px solid #ef7070;
+  font-weight: bolder;
+  color: white;
+  text-decoration: none;
+}
+.edit-delete-button {
+  background-color: #49c5b6;
+  border: 2px solid #49c5b6;
+  width: 220px;
   padding: 12px 20px;
   border-radius: 25px;
   text-align: center;
@@ -11,14 +31,13 @@
   color: white;
   text-decoration: none;
 }
-
-.btn-yellow:hover {
-  background-color: #fc6255;
+.edit-delete-button:hover {
+  background-color: #6beadb;
+  border: 2px solid #6beadb;
   font-weight: bolder;
   color: white;
   text-decoration: none;
 }
-
 .goback {
   margin-top: 70px;
   margin-bottom: 10px;
@@ -26,6 +45,8 @@
 
 .buttons {
   display: flex;
+  margin-top: 40px;
+  margin-bottom: 20px;
   justify-content:space-around;
   .btn-yellow {
     margin: 10px;
@@ -33,8 +54,8 @@
 }
 
 .submit {
-  background-color: #c62a1d;
-  border: 3px solid #c62a1d;
+  background-color: #49c5b6;
+  border: 3px solid #49c5b6;
   width: 100%;
   font-color: white;
   padding: 12px 20px;
@@ -46,8 +67,8 @@
 }
 
 .submit:hover {
-  background-color: #fc6255;
-  border: 3px solid #fc6255;
+  background-color: #6beadb;
+  border: 3px solid #6beadb;
   font-weight: bolder;
   color: white;
 }

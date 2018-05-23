@@ -4,6 +4,7 @@ before_action :set_band, only: [:show, :update]
   def index
     # @bands = Band.all
     @bands = policy_scope(Band)
+
   end
 
   def new
@@ -52,7 +53,7 @@ before_action :set_band, only: [:show, :update]
   private
 
   def band_params
-    params.require(:band).permit(:name, :description, :music_style, :number_of_musicians, :price_per_hour, :service_duration, :user_id, :photo)
+    params.require(:band).permit(:name, :description, :location, :music_style, :number_of_musicians, :price_per_hour, :service_duration, :user_id, :photo)
   end
 
    def set_band
