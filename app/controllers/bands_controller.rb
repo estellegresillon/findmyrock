@@ -4,13 +4,10 @@ before_action :set_band, only: [:show, :update]
 
   def index
     # @bands = Band.all
-    @bands = policy_scope(Band)
-    @bands = Band.where.not(latitude: nil, longitude: nil)
+    @bands = policy_scope(Band).where.not(latitude: nil, longitude: nil)
     city = params[:city]
     if city != ""
       @bands = Band.near(city)
-    else
-      @bands = Band.all
     end
 
     @markers = @bands.map do |band|
