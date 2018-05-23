@@ -5,9 +5,18 @@ before_action :set_band, only: [:show, :update]
   def index
     # @bands = Band.all
     @bands = policy_scope(Band).where.not(latitude: nil, longitude: nil)
-    city = params[:city]
+    city = params[:address]
+    style = params[:style]
+    budget = params[:budget]
     if city != ""
       @bands = Band.near(city)
+    else
+      @bands = Band.all
+    end
+    if style == "Rock"
+      @bands = Band.where(music_style: 'Rock')
+    else
+      @bands = Band.all
     end
 
     @markers = @bands.map do |band|
