@@ -12,7 +12,6 @@ gem 'faker'
 gem 'jquery-rails'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
-gem 'geocoder'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
@@ -26,6 +25,7 @@ gem "pundit"
 
 group :development do
   gem 'web-console', '>= 3.3.0'
+  gem 'geocoder'
 end
 
 group :development, :test do

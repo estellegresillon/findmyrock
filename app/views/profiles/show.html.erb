@@ -33,6 +33,7 @@
     <h3>MY BAND</h3>
     <% if current_user.band %>
       <p>Band's name : <strong><%= current_user.band.name %></strong></p>
+      <p>Located in <strong><%= current_user.band.location %></strong></p>
       <p>Music style : <strong><%= current_user.band.music_style %></strong></p>
       <p>Price per hour : <strong><%= current_user.band.price_per_hour %> €</strong></p>
       <p>Number of musicians : <strong><%= current_user.band.number_of_musicians %></strong></p>
@@ -61,6 +62,8 @@
       <%= link_to 'Delete booking', booking_path(c), method: :delete, class: "btn-yellow" %>
       <% if c.status == 'confirmed' %>
       <span class="label label-success">Validate</span>
+      <% elsif c.status == 'decline' %>
+      <span class="label label-danger">Decline</span>
       <% else %>
       <span class="label label-warning">Pending</span>
       <% end %>
@@ -76,14 +79,18 @@
         <p>Client : <%= c.user.first_name %></p>
         <p>Contact : <%= c.user.email %></p>
         <%= link_to 'Cancel booking', booking_path(c), method: :delete, class: "btn-yellow" %>
-        <% if c.status != 'confirmed' %>
+        <% if c.status.nil?  %>
           <%= simple_form_for c do |f| %>
             <%= f.input :status, as: :hidden, input_html: { value: 'confirmed'} %>
             <%= f.submit 'Accept', class: 'btn btn-primary' %>
           <% end %>
+          <%= simple_form_for c do |f| %>
+            <%= f.input :status, as: :hidden, input_html: { value: 'decline'} %>
+            <%= f.submit 'Decline', class: 'btn btn-danger' %>
+          <% end %>
         <% end %>
       <% end %>
+
   </div>
 </div>
-
 
