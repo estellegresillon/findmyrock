@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-index">
   <div class="cards">
     <% @bands.each do |b| %>
       <% if b.photo.present? %>
@@ -7,11 +7,12 @@
         <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('https://media.guim.co.uk/67bfc01de64daa10687cc2c7103b9bcd93f22138/0_0_4896_3264/1000.jpg'); background-position: center;">
       <% end  %>
       <h2><%= b.name %></h2>
-      <p><%= b.price_per_hour %></p>
+      <p><%= b.price_per_hour %> €</p>
       <p><%= b.music_style %></p>
       <p><%= b.number_of_musicians %> musicians</p>
       <%= link_to b.name, band_path(b.id), class: "card-link" %>
     </div>
     <% end %>
   </div>
+  <div id="map" data-markers="<%= @markers.to_json %>"></div>
 </div>
