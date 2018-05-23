@@ -2,7 +2,7 @@
     <h1>RENT YOUR FAVORITE BAND TODAY</h1>
     <h2>Talents around you for maximum party happiness</h2>
     <h2><span id="title-typed-text"></span></h2>
-    <%= form_tag bands_path, id: "searchbar-band" do %>
+    <%= form_tag bands_path, method: "get" do %>
       <%= text_field_tag :date , nil, placeholder: "Date", id: 'searchbar-band' %>
       <%= text_field_tag :city , nil, placeholder: "City", id: 'searchbar-band' %>
       <%= text_field_tag :style , nil, placeholder: "Style", id: 'searchbar-band' %>
