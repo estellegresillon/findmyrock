@@ -9,10 +9,12 @@
   align-items: center;
   justify-content: space-between;
 }
-
+i {
+  margin: 5px;
+}
 /* Logo */
 .navbar-wagon-brand img {
-  height: 40px;
+  height: 35px;
 }
 
 /* User Avatar */

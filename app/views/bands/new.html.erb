@@ -1,21 +1,21 @@
 <div class="container">
-  <div class="row">
+
     <div class="col-md-6 col-md-offset-3">
 
-    <h1>CREATE YOUR BAND</h1>
+      <h2 class="title-create">We're happy to see you here !</h2>
+      <p>In order to have a perfect profile, please enter a complete description of your band's story.</p></br>
 
-    <%= simple_form_for @band do |f| %>
-      <%= f.input :name %>
-      <%= f.input :description %>
-      <%= f.input :price_per_hour %>
-      <%= f.input :number_of_musicians %>
-      <%= f.input :service_duration %>
-      <%= f.input :music_style %>
-      <%= f.input :photo %>
-      <%= f.input :photo_cache, as: :hidden %>
+      <%= simple_form_for @band do |f| %>
+        <%= f.input :name %>
+        <%= f.input :description %>
+        <%= f.input :price_per_hour %>
+        <%= f.input :number_of_musicians %>
+        <%= f.input :music_style %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
 
-      <%= f.submit "Create your band", class: "btn-yellow" %>
-    <% end %>
+        <%= f.submit "Create your band", class: "submit jump-a-line" %>
+      <% end %>
     </div>
-  </div>
+
 </div>
