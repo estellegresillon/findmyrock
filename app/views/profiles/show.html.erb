@@ -33,6 +33,7 @@
     <h3>MY BAND</h3>
     <% if current_user.band %>
       <p>Band's name : <strong><%= current_user.band.name %></strong></p>
+      <p>Located in <strong><%= current_user.band.location %></strong></p>
       <p>Music style : <strong><%= current_user.band.music_style %></strong></p>
       <p>Price per hour : <strong><%= current_user.band.price_per_hour %> €</strong></p>
       <p>Number of musicians : <strong><%= current_user.band.number_of_musicians %></strong></p>

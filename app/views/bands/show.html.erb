@@ -15,11 +15,12 @@
         <h3 class="red-title"><strong>Get in touch with <%= @band.name %> :</strong></h3>
         <ul class="list-unstyled">
           <p>Music style : <strong><%= @band.music_style %></strong></p>
+          <p>Located in <strong><%= @band.location %></strong></p>
           <p>Price per hour : <strong><%= @band.price_per_hour %> €</strong></p>
           <p>Number of musicians : <strong><%= @band.number_of_musicians %></strong></p>
         </br>
           <h4>The band story :</h4>
-          <p><%= current_user.band.description %></p>
+          <p><%= @band.description %></p>
         </ul>
       </div>
     </div>
