@@ -1,5 +1,5 @@
 .banner-home {
-  color: white;
+  color: black;
   text-align: center;
   height: calc(100vh - 70px);
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
@@ -20,4 +20,10 @@
   font-size: 24px;
   color: white;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+#searchbar-band {
+  outline-color: white;
+  height: 50px !important;
+  padding-left: 10px;
+  margin-left: 5px;
 }
