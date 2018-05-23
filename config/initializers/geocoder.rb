@@ -7,7 +7,7 @@ Geocoder.configure(
   use_https: true,           # use HTTPS for lookup requests? (if supported)
   # http_proxy: nil,            # HTTP proxy server (user:pass@host:port)
   # https_proxy: nil,           # HTTPS proxy server (user:pass@host:port)
-  api_key: ENV['GOOGLE_API_SERVER_KEY'],
+  api_key: ENV['AIzaSyChKRiRnwf-VkSvj_4g15ILpKiFuby-_jM'],
   # cache: nil,                 # cache object (must respond to #[], #[]=, and #del)
   # cache_prefix: 'geocoder:',  # prefix (string) to use for all cache keys
 
