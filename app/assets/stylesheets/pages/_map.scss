@@ -1,0 +1,12 @@
+#map {
+  flex: 0 0 500px;
+  height: 100vh;
+  position: sticky !important; /* !important to override Gmaps inline CSS */
+  top: 0 !important;
+  overflow: hidden;
+}
+
+.container-index {
+    display: flex;
+    margin-bottom: 30px;
+}

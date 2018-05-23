@@ -4,6 +4,9 @@ class Band < ApplicationRecord
   has_many :users, through: :bookings
   has_many :reviews
 
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
+
   mount_uploader :photo, PhotoUploader
 
   scope :next, lambda {|id| where("id > ?",id).order("id ASC") } # this is the default ordering for AR
