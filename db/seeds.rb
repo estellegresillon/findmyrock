@@ -9,6 +9,11 @@ Booking.destroy_all
 Band.destroy_all
 User.destroy_all
 
+Genre.create(name: "Rock")
+Genre.create(name: "Pop")
+Genre.create(name: "Metal")
+Genre.create(name: "Blues")
+
 first_user = User.create(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
@@ -21,7 +26,7 @@ first_band = Band.create(
   price_per_hour: Random.rand(100..15000),
   number_of_musicians: Random.rand(1..6),
   location: ["Paris", "Dijon", "Reims"].sample,
-  music_style: ["Rock", "Metal", "Pop"].sample,
+  music_style: ["Rock", "Metal", "Pop", "Blues"].sample,
   user: first_user
   )
 
@@ -45,7 +50,7 @@ first_band = Band.create(
     price_per_hour: Random.rand(100..15000),
     number_of_musicians: Random.rand(1..6),
     location: ["Paris", "Dijon", "Reims"].sample,
-    music_style: ["Rock", "Metal", "Pop"].sample,
+    music_style: ["Rock", "Metal", "Pop", "Blues"].sample,
     user: new_user
     )
 end
