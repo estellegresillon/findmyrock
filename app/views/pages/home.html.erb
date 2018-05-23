@@ -1,14 +1,17 @@
-<div class="banner-home" style="background-image: url('http://www.nunabar.fr/wp-content/uploads/2016/01/Nunabar-bar-restaurant-live-concert-Haute-Savoie-Samoens-sixt-fer-%C3%A0-cheval-concert-HK-3.png') /*linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%,)*/; height: 100vh; background-position: center;">
+<div class="banner-home" style="background: -webkit-linear-gradient(top, rgba(254,187,187,0.7) 0%,rgba(239,169,136,0.7) 50%,rgba(255,56,56,0.7) 100%), url('https://oneclassblog.com/wp-content/uploads/2018/02/popular-music-performance-top-up-Cropped-1920x830.jpg'); height: 100vh; background-position: center;">
+  <div class="banner-content">
     <h1>RENT YOUR FAVORITE BAND TODAY</h1>
-    <h2>Talents around you for maximum party happiness</h2>
-    <h2><span id="title-typed-text"></span></h2>
+    <h2>Talents around you for maximum happiness</h2>
+    <div class="searchbar-home">
     <%= form_tag bands_path, method: "get" do %>
       <%= text_field_tag :date , nil, placeholder: "Date", id: 'searchbar-band' %>
-      <%= text_field_tag :city , nil, placeholder: "City", id: 'searchbar-band' %>
+      <%= text_field_tag :address , nil, placeholder: "Address", id: 'band_address' %>
       <%= text_field_tag :style , nil, placeholder: "Style", id: 'searchbar-band' %>
       <%= text_field_tag :budget , nil, placeholder: "Budget", id: 'searchbar-band' %>
-      <%= submit_tag "Discover Bands", class: "btn-yellow" %>
+      <%= submit_tag "Discover", class: "btn-search" %>
     <% end %>
+  </div>
+</div>
     <!-- <video autoplay muted loop id="banner-video-bg"> -->
 
     <!-- </video> -->

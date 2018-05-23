@@ -1,5 +1,5 @@
 #map {
-  flex: 0 0 500px;
+  flex: 0 0 30%;
   height: 100vh;
   position: sticky !important; /* !important to override Gmaps inline CSS */
   top: 0 !important;
@@ -8,5 +8,6 @@
 
 .container-index {
     display: flex;
-    margin-bottom: 30px;
+    margin-top : -30px;
+
 }

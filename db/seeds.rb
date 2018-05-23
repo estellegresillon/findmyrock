@@ -26,7 +26,7 @@ first_band = Band.create(
   )
 
 
-16.times do
+50.times do
   booking = Booking.create(
     user: User.last,
     location: "Paris",
