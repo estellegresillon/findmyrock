@@ -3,13 +3,12 @@
     <h1>RENT YOUR FAVORITE BAND TODAY</h1>
     <h2>Talents around you for maximum happiness</h2>
     <div class="searchbar-home">
-    <%= simple_form_for [ @band, @genre ] do |f| %>
-      <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= f.input :address, label: "Address", input_html: {id: "band_address"} %>
-      <%= f.association :genres, prompt: "Music style", input_html: {id: "searchbar-band"} %>
-      <%= f.input :price_per_hour, label: "Budget", input_html: {id: "searchbar-band"} %>
-      <%= f.submit "Add", class: "btn-search" %>
+    <%= form_tag bands_path, method: "get" do %>
+      <%= text_field_tag :date, nil, placeholder: "Date", class: 'datepicker', id: 'searchbar-band' %>
+      <%= text_field_tag :address, nil, placeholder: "Address", id: 'band_address' %>
+      <%= text_field_tag :budget, nil, placeholder: "Budget", id: 'searchbar-band' %>
+      <%= select_tag :genres, multiple: true, prompt: "Select something", id: 'searchbar-band' %>
+      <%= submit_tag "Discover", class: "btn-search" %>
     <% end %>
   </div>
 </div>
