@@ -20,7 +20,7 @@ first_band = Band.create(
   description: Faker::Lorem.sentence,
   price_per_hour: Random.rand(100..15000),
   number_of_musicians: Random.rand(1..6),
-  service_duration: [30, 45, 60, 90, 120, 180].sample,
+  location: "Paris",
   music_style: ["Rock", "Metal", "Pop"].sample,
   user: first_user
   )
@@ -44,7 +44,7 @@ first_band = Band.create(
     description: Faker::Lorem.sentence,
     price_per_hour: Random.rand(100..15000),
     number_of_musicians: Random.rand(1..6),
-    service_duration: [30, 45, 60, 90, 120, 180].sample,
+    location: "Paris",
     music_style: ["Rock", "Metal", "Pop"].sample,
     user: new_user
     )

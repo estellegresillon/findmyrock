@@ -4,15 +4,7 @@ before_action :set_band, only: [:show, :update]
   def index
     # @bands = Band.all
     @bands = policy_scope(Band)
-    @bands = Band.where.not(latitude: nil, longitude: nil)
 
-    @markers = @bands.map do |b|
-      {
-        lat: b.latitude,
-        lng: b.longitude#,
-        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
-      }
-    end
   end
 
   def new
@@ -61,7 +53,7 @@ before_action :set_band, only: [:show, :update]
   private
 
   def band_params
-    params.require(:band).permit(:name, :description, :music_style, :number_of_musicians, :price_per_hour, :service_duration, :user_id, :photo)
+    params.require(:band).permit(:name, :description, :location, :music_style, :number_of_musicians, :price_per_hour, :service_duration, :user_id, :photo)
   end
 
    def set_band
