@@ -2,10 +2,10 @@
   margin-top: 80px;
   margin-bottom: 40px;
 }
-#band_name, #band_price_per_hour, #review_rating, #review_commenter, #band_number_of_musicians, #band_music_style {
+#band_name, #band_location, #band_price_per_hour, #review_rating, #review_commenter, #band_number_of_musicians, #band_music_style {
   height: 50px;
   background-color: white;
-  padding-left: 20px;
+  padding-left: 15px;
   border-radius: 0px;
   font-family : "Montserrat";
   font-size: 14px;
@@ -17,7 +17,8 @@
 #review_content, #band_description {
   height: 100px;
   background-color: white;
-  padding-left: 20px;
+  padding-top: 10px;
+  padding-left: 15px;
   border-radius: 0px;
   font-family : "Montserrat";
   font-size: 14px;
@@ -29,7 +30,7 @@
 #booking_date_1i, #booking_date_2i, #booking_date_3i, #booking_location {
   height: 50px;
   background-color: white;
-  padding-left: 20px;
+  padding-left: 15px;
   border-radius: 0px;
   font-family : "Montserrat";
   font-size: 14px;
@@ -55,4 +56,14 @@
 .form-booking:hover {
   margin-top: -90px;
   box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
+}
+.flatpickr-calendar.open {
+  margin-top: 10px;
+  padding: 5px;
+}
+.form-control-label, .file {
+  color: #ff4e4e;
+}
+.form-control-label textarea {
+  color: black;
 }

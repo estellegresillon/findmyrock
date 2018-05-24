@@ -30,36 +30,40 @@
 }
 #searchbar-band {
   height: 50px !important;
-  padding-left: 20px;
+  padding-left: 15px;
   border-radius: 0px;
   font-family : "Montserrat";
   font-size: 14px;
   min-width: 120px;
   border: 2px solid white;
   box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  margin: 2px
 }
 #band_address {
   height: 50px !important;
-  padding-left: 20px;
+  padding-left: 15px;
   border-radius: 0px;
   margin-top: 2px;
   font-family : "Montserrat";
   font-size: 14px;
   border: 2px solid white;
   box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  margin: 2px;
 }
 .searchbar-home {
   margin-top: 40px;
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  align-items: center;
+  //flex-wrap: nowrap;
 }
 .searchbar-index {
-  margin-top: 10px;
+  margin-top: 30px;
   margin-left: 30px;
+  form {
   display: flex;
-  flex-wrap: nowrap;
-  flex-direction: column;
+  align-items: center;
+  //flex-wrap: nowrap;
+  }
 }
 
 // #banner-video-bg {

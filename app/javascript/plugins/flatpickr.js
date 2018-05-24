@@ -4,7 +4,7 @@ import "flatpickr/dist/themes/airbnb.css"
 
 flatpickr(".datepicker", {
     enableTime: true,
-    dateFormat: "Y-m-d H:i",
+    dateFormat: "Y-m-d",
 })
 
 export { flatpickr };

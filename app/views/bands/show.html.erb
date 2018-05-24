@@ -31,7 +31,7 @@
         <h3 class="title-booking">Book us !</h3>
         <%= simple_form_for [ @band, @booking ] do |f| %>
           <%= f.input :date %>
-          <%= f.input :location, label: "City" %>
+          <%= f.input :location, :input_html => {:id => 'band_address'} %>
           <%= f.submit "Book us", class: "submit" %>
         <% end %>
         <p>Total : <strong><%= @band.price_per_hour %> €</strong></p>
