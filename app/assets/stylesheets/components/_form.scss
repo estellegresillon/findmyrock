@@ -47,7 +47,7 @@
 .form-booking {
   background-color: white;
   box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-  z-index: 2;
+  //z-index: 2;
   margin-top: -80px;
   padding: 20px 40px 20px 40px;
   transition: all 0.3s ease;
@@ -66,4 +66,7 @@
 }
 .form-control-label textarea {
   color: black;
+}
+.form-booking {
+  border-radius: 5px;
 }
