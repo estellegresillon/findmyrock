@@ -4,6 +4,47 @@
   max-width: 1000px;
   min-height: calc(100vh - 520px);
 }
+.content-all {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  min-height: calc(100vh - 170px);
+}
+.content-sessions {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+.user_remember_me {
+  margin-right: 10px;
+}
+.card-sessions {
+  background-color: white;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  padding: 40px 50px 40px 50px;
+  padding-top: -10px;
+  width: 50%;
+}
+.content-dashboard {
+  background-color: white;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  padding: 50px;
+  padding-top: -10px;
+  align-items: center;
+}
+.content-dashboard:hover {
+  background-color: white;
+  box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
+}
+.card-sessions:hover {
+  background-color: white;
+  box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
+}
 .downpage-links {
   margin-bottom: 100px;
   display: flex;

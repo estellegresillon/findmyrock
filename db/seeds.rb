@@ -26,12 +26,13 @@ first_band = Band.create(
   price_per_hour: Random.rand(100..15000),
   number_of_musicians: Random.rand(1..6),
   location: ["Paris", "Dijon", "Reims"].sample,
+  photo: "https://oneclassblog.com/wp-content/uploads/2018/02/popular-music-performance-top-up-Cropped-1920x830.jpg",
   music_style: ["Rock", "Metal", "Pop", "Blues"].sample,
   user: first_user
   )
 
 
-50.times do
+16.times do
   booking = Booking.create(
     user: User.last,
     location: "Paris",
@@ -50,6 +51,7 @@ first_band = Band.create(
     price_per_hour: Random.rand(100..15000),
     number_of_musicians: Random.rand(1..6),
     location: ["Paris", "Dijon", "Reims"].sample,
+    photo: "https://oneclassblog.com/wp-content/uploads/2018/02/popular-music-performance-top-up-Cropped-1920x830.jpg",
     music_style: ["Rock", "Metal", "Pop", "Blues"].sample,
     user: new_user
     )

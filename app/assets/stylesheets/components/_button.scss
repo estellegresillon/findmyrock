@@ -1,6 +1,6 @@
 .btn-yellow {
-  background-color: #ff4e4e;
-  border: 2px solid #ff4e4e;
+  background: linear-gradient(135deg, #ef7070 0%, #FF0000 100%);
+  border: none;
   width: 220px;
   padding: 12px 20px;
   border-radius: 25px;
@@ -10,17 +10,20 @@
   font-weight: bolder;
   color: white;
   text-decoration: none;
+  box-shadow: 0 2px 6px 0 rgba(255,120,180,0.4);
 }
+
 .btn-yellow:hover {
-  background-color: #ef7070;
-  border: 2px solid #ef7070;
+  background: linear-gradient(135deg, #FF0000 0%, #B22222 100%);
+  border: none;
   font-weight: bolder;
   color: white;
   text-decoration: none;
+  box-shadow: 0 5px 10px 0 rgba(255,120,180,0.4);
 }
 .edit-delete-button {
-  background-color: #49c5b6;
-  border: 2px solid #49c5b6;
+  background: linear-gradient(135deg, #21c7d0 0%, #2dde98 100%);
+  border: none;
   width: 220px;
   padding: 12px 20px;
   border-radius: 25px;
@@ -30,13 +33,15 @@
   font-weight: bolder;
   color: white;
   text-decoration: none;
+  box-shadow: 0 2px 6px 0 rgba(45,222,152,0.4);
 }
 .edit-delete-button:hover {
-  background-color: #6beadb;
-  border: 2px solid #6beadb;
+  background: linear-gradient(135deg, #1a9da4 0%, #2dde98 100%);
+  border: none;
   font-weight: bolder;
   color: white;
   text-decoration: none;
+  box-shadow: 0 5px 10px 0 rgba(45,222,152,0.4);
 }
 .goback {
   margin-top: 70px;
@@ -47,15 +52,15 @@
   display: flex;
   margin-top: 40px;
   margin-bottom: 20px;
-  justify-content:space-around;
+  justify-content: space-around;
   .btn-yellow {
     margin: 10px;
   }
 }
 
 .submit {
-  background-color: #49c5b6;
-  border: 3px solid #49c5b6;
+  background: linear-gradient(135deg, #21c7d0 0%, #2dde98 100%);
+  border: none;
   width: 100%;
   font-color: white;
   padding: 12px 20px;
@@ -64,31 +69,34 @@
   margin-bottom: 20px;
   font-weight: bolder;
   color: white;
+  box-shadow: 0 2px 6px 0 rgba(45,222,152,0.4);
 }
 
 .submit:hover {
-  background-color: #6beadb;
-  border: 3px solid #6beadb;
+  background: linear-gradient(135deg, #1a9da4 0%, #2dde98 100%);
+  border: none;
   font-weight: bolder;
   color: white;
+  box-shadow: 0 5px 10px 0 rgba(45,222,152,0.4);
 }
 .btn-search {
-  background-color: #49c5b6;
-  border: 2px solid #49c5b6;
+  background: linear-gradient(135deg, #21c7d0 0%, #2dde98 100%);
+  border: none;
   width: 220px;
-  height: 50px;
-  padding: 12px 20px 12px 20px;
+  height: 53px;
   border-radius: 25px;
   text-align: center;
   font-weight: bolder;
   color: white;
   text-decoration: none;
-  margin-left: 2px;
+  margin-left: 8px;
+  box-shadow: 0 2px 6px 0 rgba(45,222,152,0.4);
 }
 .btn-search:hover {
-  background-color: #6beadb;
-  border: 2px solid #6beadb;
+  background: linear-gradient(135deg, #1a9da4 0%, #2dde98 100%);
+  border: none;
   font-weight: bolder;
   color: white;
   text-decoration: none;
+  box-shadow: 0 5px 10px 0 rgba(45,222,152,0.4);
 }

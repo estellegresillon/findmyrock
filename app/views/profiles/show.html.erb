@@ -30,6 +30,7 @@
 <div class="tab-content">
 
   <div id="my-band" class="tab-pane fade in active content">
+    <div class="content-dashboard">
     <h3>MY BAND</h3>
     <% if current_user.band %>
       <p>Band's name : <strong><%= current_user.band.name %></strong></p>
@@ -40,6 +41,7 @@
     </br>
       <h4>The band story :</h4>
       <p><%= current_user.band.description %></p>
+    </div>
       <div class="buttons">
         <%= link_to "Edit band",  edit_band_path(current_user), class: "edit-delete-button" %>
         <%= link_to 'Delete band', band_path(current_user), method: :delete, class: "edit-delete-button" %>
@@ -54,21 +56,30 @@
 
   <div id="my-bookings" class="tab-pane fade content">
     <h3>MY BOOKINGS</h3>
-    <% @bookings.each do |c| %>
-      <p>Group : <%= c.band.name %></p>
-      <p>Playing the <%= c.date %></p>
-      <p>In <%= c.location %></p>
-      <p>Due : <%= c.band.price_per_hour %> €</p>
-      <%= link_to 'Delete booking', booking_path(c), method: :delete, class: "btn-yellow" %>
-      <% if c.status == 'confirmed' %>
-      <span class="label label-success">Validate</span>
-      <% elsif c.status == 'decline' %>
-      <span class="label label-danger">Decline</span>
-      <% else %>
-      <span class="label label-warning">Pending</span>
+
+    <div class="cards-booking">
+      <% @bookings.each do |c| %>
+      <div class="card-booking">
+        <p>Group : <%= c.band.name %></p>
+        <p>Playing the <%= c.date %></p>
+        <p>In <%= c.location %></p>
+        <p>Due : <%= c.band.price_per_hour %> €</p>
+        <%= link_to 'Delete booking', booking_path(c), method: :delete, class: "btn-yellow" %>
+        <% if c.status == 'confirmed' %>
+        <span class="label label-success">Validate</span>
+        <% elsif c.status == 'decline' %>
+        <span class="label label-danger">Decline</span>
+        <% else %>
+        <span class="label label-warning">Pending</span>
+        <% end %>
+      </div>
       <% end %>
-    <% end %>
+
+</div>
+
+  <div class="buttons">
     <%= link_to "Book a band", bands_path, class: "btn-yellow" %>
+  </div>
   </div>
 
   <div id="my-clients" class="tab-pane fade content">

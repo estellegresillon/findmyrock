@@ -31,9 +31,35 @@
 .card:hover {
   box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
   margin-top: -5px;
-
 }
 
+.cards-booking {
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-content: center;
+  .card-booking {
+    flex: 0 0 auto;
+  }
+}
+.card-booking {
+  height: 200px;
+  width: 300px;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  position: relative;
+  background-color: white;
+  transition: all 0.3s ease;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.card-booking:hover {
+  box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
+}
 .card h2 {
   font-family: "Montserrat";
   font-size: 16px;
