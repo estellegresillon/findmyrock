@@ -32,14 +32,16 @@
   <div id="my-band" class="tab-pane fade in active content">
     <div class="content-dashboard">
     <h3>MY BAND</h3>
+    <div class="h_line"></div>
     <% if current_user.band %>
       <p>Band's name : <strong><%= current_user.band.name %></strong></p>
-      <p>Located in <strong><%= current_user.band.location %></strong></p>
+      <p>Located in <strong><%= current_user.band.address %></strong></p>
       <p>Music style : <strong><%= current_user.band.music_style %></strong></p>
       <p>Price per hour : <strong><%= current_user.band.price_per_hour %> €</strong></p>
       <p>Number of musicians : <strong><%= current_user.band.number_of_musicians %></strong></p>
     </br>
       <h4>The band story :</h4>
+      <div class="h_line2"></div>
       <p><%= current_user.band.description %></p>
     </div>
       <div class="buttons">
@@ -62,7 +64,7 @@
       <div class="card-booking">
         <p>Group : <%= c.band.name %></p>
         <p>Playing the <%= c.date %></p>
-        <p>In <%= c.location %></p>
+        <p>In <%= c.address %></p>
         <p>Due : <%= c.band.price_per_hour %> €</p>
         <%= link_to 'Delete booking', booking_path(c), method: :delete, class: "btn-yellow" %>
         <% if c.status == 'confirmed' %>
