@@ -3,47 +3,45 @@ skip_before_action :authenticate_user!, only: [:index, :show]
 before_action :set_band, only: [:show, :update]
 
   def index
-    # @bands = Band.all
     @bands = policy_scope(Band).where.not(latitude: nil, longitude: nil)
 
     if params[:style].present? && params[:address].blank? && params[:budget].blank?
-      @bands = Band.where("music_style ILIKE ?", "%#{params[:style]}%")
+      @bands = @bands.where("music_style ILIKE ?", "%#{params[:style]}%")
 
     elsif params[:style].present? && params[:address].present? && params[:budget].blank?
       sql_query = " \
               music_style ILIKE :style \
             "
-            @bands = Band.where(sql_query, style: "%#{params[:style]}%").near("#{params[:address]}", 100)
+            @bands = @bands.where(sql_query, style: "%#{params[:style]}%").near(params[:address], 100)
 
     elsif params[:style].present? && params[:address].present? && params[:budget].present?
       sql_query = " \
               music_style ILIKE :style \
-              AND  price_per_hour ILIKE :budget \
+              AND price_per_hour < :budget \
             "
-            @bands = Band.where(sql_query, style: "%#{params[:style]}%", budget: "%#{params[:budget]}%").near("#{params[:address]}", 100)
+            @bands = @bands.where(sql_query, style: "%#{params[:style]}%", budget: params[:budget].to_i).near(params[:address], 100)
 
      elsif params[:style].blank? && params[:address].blank? && params[:budget].present?
       sql_query = " \
-              price_per_hour ILIKE :budget \
+              price_per_hour < :budget \
             "
+      @bands = @bands.where(sql_query, budget: params[:budget].to_i)
 
     elsif params[:style].present? && params[:address].blank? && params[:budget].present?
       sql_query = " \
               music_style ILIKE :style \
-              AND  price_per_hour ILIKE :budget \
+              AND  price_per_hour < :budget \
             "
-            @bands = Band.where(sql_query, style: "%#{params[:style]}%", budget: "%#{params[:budget]}%")
+            @bands = @bands.where(sql_query, style: "%#{params[:style]}%", budget: params[:budget].to_i)
 
     elsif params[:style].blank? && params[:address].present? && params[:budget].blank?
-      @bands = Band.near("#{params[:address]}", 10)
+      @bands = @bands.near("#{params[:address]}", 10)
 
     elsif params[:style].blank? && params[:address].present? && params[:budget].present?
       sql_query = " \
-              AND  price_per_hour ILIKE :budget \
+              AND  price_per_hour < :budget \
             "
-            @bands = Band.where(sql_query, budget: "%#{params[:budget]}%").near("#{params[:address]}", 10)
-    else
-      @bands = Band.all
+            @bands = @bands.where(sql_query, budget: params[:budget].to_i).near(params[:address], 10)
     end
      markers
   end
