@@ -15,7 +15,7 @@
         <h3 class="red-title"><strong>Get in touch with <%= @band.name %> :</strong></h3>
         <ul class="list-unstyled">
           <p>Music style : <strong><%= @band.music_style %></strong></p>
-          <p>Located in <strong><%= @band.location %></strong></p>
+          <p>Located in <strong><%= @band.address %></strong></p>
           <p>Price per hour : <strong><%= @band.price_per_hour %> €</strong></p>
           <p>Number of musicians : <strong><%= @band.number_of_musicians %></strong></p>
         </br>
@@ -31,7 +31,7 @@
         <h3 class="title-booking">Book us !</h3>
         <%= simple_form_for [ @band, @booking ] do |f| %>
           <%= f.input :date %>
-          <%= f.input :location, :input_html => {:id => 'band_address'} %>
+          <%= f.input :address, :input_html => {:id => 'band_address'} %>
           <%= f.submit "Book us", class: "submit" %>
         <% end %>
         <p>Total : <strong><%= @band.price_per_hour %> €</strong></p>

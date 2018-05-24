@@ -5,28 +5,27 @@ before_action :set_band, only: [:show, :update]
   def index
     # @bands = Band.all
     @bands = policy_scope(Band).where.not(latitude: nil, longitude: nil)
+
     if params[:style].present? && params[:address].blank? && params[:budget].blank?
       @bands = Band.where("music_style ILIKE ?", "%#{params[:style]}%")
+
     elsif params[:style].present? && params[:address].present? && params[:budget].blank?
       sql_query = " \
               music_style ILIKE :style \
-              AND location ILIKE :address \
             "
-            @bands = Band.where(sql_query, style: "%#{params[:style]}%", address: "%#{params[:address]}%")
+            @bands = Band.where(sql_query, style: "%#{params[:style]}%").near("#{params[:address]}", 100)
 
     elsif params[:style].present? && params[:address].present? && params[:budget].present?
       sql_query = " \
               music_style ILIKE :style \
-              AND location ILIKE :address \
               AND  price_per_hour ILIKE :budget \
             "
-            @bands = Band.where(sql_query, style: "%#{params[:style]}%", address: "%#{params[:address]}%", budget: "%#{params[:budget]}%")
+            @bands = Band.where(sql_query, style: "%#{params[:style]}%", budget: "%#{params[:budget]}%").near("#{params[:address]}", 100)
 
      elsif params[:style].blank? && params[:address].blank? && params[:budget].present?
       sql_query = " \
               price_per_hour ILIKE :budget \
             "
-            @bands = Band.where(sql_query, budget: "%#{params[:budget]}%")
 
     elsif params[:style].present? && params[:address].blank? && params[:budget].present?
       sql_query = " \
@@ -36,30 +35,17 @@ before_action :set_band, only: [:show, :update]
             @bands = Band.where(sql_query, style: "%#{params[:style]}%", budget: "%#{params[:budget]}%")
 
     elsif params[:style].blank? && params[:address].present? && params[:budget].blank?
-      sql_query = " \
-              location ILIKE :address \
-            "
-            @bands = Band.where(sql_query, address: "%#{params[:address]}%")
+      @bands = Band.near("#{params[:address]}", 10)
 
     elsif params[:style].blank? && params[:address].present? && params[:budget].present?
       sql_query = " \
-              location ILIKE :address \
               AND  price_per_hour ILIKE :budget \
             "
-            @bands = Band.where(sql_query, address: "%#{params[:address]}%", budget: "%#{params[:budget]}%")
-
+            @bands = Band.where(sql_query, budget: "%#{params[:budget]}%").near("#{params[:address]}", 10)
     else
       @bands = Band.all
-
-
-    @markers = @bands.map do |band|
-      {
-        lat: band.latitude,
-        lng: band.longitude#,
-        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
-      }
-      end
     end
+     markers
   end
 
 
@@ -109,12 +95,22 @@ before_action :set_band, only: [:show, :update]
   private
 
   def band_params
-    params.require(:band).permit(:name, :description, :location, :music_style, :number_of_musicians, :price_per_hour, :service_duration, :user_id, :photo)
+    params.require(:band).permit(:name, :description, :address, :music_style, :number_of_musicians, :price_per_hour, :service_duration, :user_id, :photo)
   end
 
    def set_band
     @band = Band.find(params[:id])
     authorize @band
+   end
+
+   def markers
+    @markers = @bands.map do |band|
+      {
+        lat: band.latitude,
+        lng: band.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }
+      end
     end
 end
 
