@@ -1,6 +1,6 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+<div class="content-all">
+  <div class="content-sessions">
+    <div class="card-sessions">
       <h2>Sign up</h2>
 
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -15,7 +15,7 @@
           </div>
 
           <div class="form-actions">
-            <%= f.button :submit, "Sign up", class: "btn-yellow" %>
+            <%= f.button :submit, "Sign up", class: "submit" %>
           </div>
         <% end %>
 
