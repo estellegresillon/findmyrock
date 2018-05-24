@@ -1,78 +1,141 @@
-#left, #right, #center {
-  margin: 0 35px 0 35px;
-}
-
-.h2{
-  font-size: 38px;
-}
-
-.landing-h2{
-  margin: 40px 30px 30px 30px;
-  text-align: center;
-}
-
-.wrap{
+.wrapper-popular {
   display: flex;
-  align-items: center;
-  background: white;
-  height: 300px;
-  text-align: center;
-  background-size: cover !important;
-  color: #333;
-}
-
-.container {
-  margin-top: 36px;
-  // margin-bottom: 28px;
-}
-
-.blue {
-  color: #3772FF;
-}
-
-.red {
-  color: #AE433B;
-}
-
-.yellow {
-  color: #FDCA40;
-}
-
-.section-title-home {
-  text-align: center;
-  font-size: 30px;
-  font-weight: 600;
-  letter-spacing: -2px;
-  border-bottom: 1px solid #E0E0E0;
-  height: 7px;
+  flex-direction: column;
+  margin-top: 70px;
   align-items: center;
   justify-content: center;
-  position: relative;
-  display: flex;
-  margin: 2em 40px 1em 40px;
-  z-index: 1;
+  margin-bottom: -40px;
 }
-
-.section-title-home-content {
-    background-color: #fff;
-    position: relative;
-    padding-right: 30px;
-    padding-left: 30px;
+.item-home {
+  max-width: 300px;
+  position: relative;
+  margin: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.item-home-descr {
+  max-width: 450px;
+  position: relative;
+  margin: 50px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  i {
+    color: #2dde98;
+    font-size: 20px;
+    margin-right: 5px;
+  }
+}
+.cards-home {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+  .card-home {
+    flex: 0 1 auto;
+  }
+}
+.card-home {
+  height: 200px;
+  width: 300px;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  color: white;
+  position: relative;
+  background-color: white;
+  transition: all 0.3s ease;
+  margin: 20px;
+  text-align: center;
+  background-size: cover !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.card-home:hover {
+  box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
+  margin-top: -5px;
+}
+.wrapper-icons {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  margin-bottom: 70px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, #ef7070 0%, #FF0000 100%);
+  box-shadow: 0 5px 10px 0 rgba(255,120,180,0.4);
+  color: white;
+  padding-top: 70px;
+  padding-bottom: 30px;
+    i {
+    color: white;
+    margin-bottom: 30px;
+  }
+}
+.wrapper-music-lovers {
+  display: flex;
+  flex-direction: column;
+  margin-top: 70px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: -40px;
+}
+.cards-lovers {
+  margin-top: 20px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-content: center;
+  .card {
+    flex: 0 0 auto;
+  }
+}
+.wrapper-every-artist {
+  display: flex;
+  flex-direction: column;
+  padding-top: 70px;
+  margin-bottom: -30px;
+  margin-top: 70px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: -40px;
+  background-color: #F4F4F4;
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+}
+.wrapper-talk {
+  display: flex;
+  flex-direction: column;
+  padding-top: 100px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: -20px;
 }
 
 .reviews {
-  padding: 50px;
+  padding: 20px;
   display: flex;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
+  a {
+    margin: 0px 30px 0px 30px;
+  }
 }
 
-.content {
-    text-align: justify;
-    padding-top: 70px;
-}
-
-.photo {
-    width: 250px;
-    height: 250px;
+.photo-lovers {
+  height: 200px;
+  width: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 5px 10px 0 rgba(255,120,180,0.4);
 }
