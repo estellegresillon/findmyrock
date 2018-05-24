@@ -6,8 +6,8 @@
     <%= form_tag bands_path, method: "get" do %>
       <%= text_field_tag :date, nil, placeholder: "Date", class: 'datepicker', id: 'searchbar-band' %>
       <%= text_field_tag :address, nil, placeholder: "Address", id: 'band_address' %>
+      <%= text_field_tag :style , nil, placeholder: "Style", id: 'searchbar-band' %>
       <%= text_field_tag :budget, nil, placeholder: "Budget", id: 'searchbar-band' %>
-      <%= select_tag :genres, multiple: true, prompt: "Select something", id: 'searchbar-band' %>
       <%= submit_tag "Discover", class: "btn-search" %>
     <% end %>
   </div>
