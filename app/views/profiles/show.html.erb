@@ -52,9 +52,12 @@
       <p><strong>Hello there !</strong><p></br>
       <p>We know how cool it is to book all of your favorite bands, but why don't you also join the crowd ?<p>
       <p>Ready to share your love for music ?</p></br>
-      <%= link_to "Add your band", new_band_path, class: "btn-yellow" %>
+      <%= link_to "Add your band", new_band_path, class: "edit-delete-button" %>
+    </div>
     <% end %>
   </div>
+
+
 
   <div id="my-bookings" class="tab-pane fade content">
     <h3>MY BOOKINGS</h3>
@@ -81,7 +84,7 @@
     </div>
 
     <div class="buttons">
-      <%= link_to "Book a band", bands_path, class: "btn-yellow" %>
+      <%= link_to "Book a band", bands_path, class: "edit-delete-button" %>
     </div>
   </div>
 
@@ -114,4 +117,4 @@
 
   </div>
 </div>
-
+</div>
