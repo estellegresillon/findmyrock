@@ -42,7 +42,7 @@
     </br>
       <h4>The band story :</h4>
       <div class="h_line2"></div>
-      <p><%= current_user.band.description %></p>
+      <p class="cropped-text-band"><%= current_user.band.description %></p>
     </div>
       <div class="buttons">
         <%= link_to "Edit band",  edit_band_path(current_user), class: "edit-delete-button" %>
@@ -58,50 +58,58 @@
 
   <div id="my-bookings" class="tab-pane fade content">
     <h3>MY BOOKINGS</h3>
+    <p class="cropped-text-bookings">Here are you requested bookings. Wait until the status turns to "Confirmed" to take contact with your band and prepare your party together !</p>
 
     <div class="cards-booking">
       <% @bookings.each do |c| %>
       <div class="card-booking">
-        <p>Group : <%= c.band.name %></p>
-        <p>Playing the <%= c.date %></p>
-        <p>In <%= c.address %></p>
-        <p>Due : <%= c.band.price_per_hour %> €</p>
-        <%= link_to 'Delete booking', booking_path(c), method: :delete, class: "btn-yellow" %>
+        <p>Group : <strong><%= c.band.name %></strong></p>
+        <p>Playing the <strong><%= c.date %></strong></p>
+        <p>in <strong><%= c.address %></strong></p>
+        <p>Due : <strong><%= c.band.price_per_hour %> €</strong></p>
+
         <% if c.status == 'confirmed' %>
-        <span class="label label-success">Validate</span>
+        <span class="btn-confirmed">Confirmed</span>
         <% elsif c.status == 'decline' %>
-        <span class="label label-danger">Decline</span>
+        <span class="btn-declined">Declined :(</span>
         <% else %>
-        <span class="label label-warning">Pending</span>
+        <span class="button-pending">Pending</span>
         <% end %>
+        <%= link_to 'Cancel booking', booking_path(c), method: :delete, class: "text-delete" %>
       </div>
       <% end %>
+    </div>
 
-</div>
-
-  <div class="buttons">
-    <%= link_to "Book a band", bands_path, class: "btn-yellow" %>
-  </div>
+    <div class="buttons">
+      <%= link_to "Book a band", bands_path, class: "btn-yellow" %>
+    </div>
   </div>
 
   <div id="my-clients" class="tab-pane fade content">
 
       <h3>MY CLIENTS</h3>
+      <p class="cropped-text-bookings jump-a-little">Manage your bookings here. You can either confirm or decline a booking.</p>
 
       <% @peoplewhobookedme.each do |c| %>
-        <p>Client : <%= c.user.first_name %></p>
-        <p>Contact : <%= c.user.email %></p>
-        <%= link_to 'Cancel booking', booking_path(c), method: :delete, class: "btn-yellow" %>
-        <% if c.status.nil?  %>
-          <%= simple_form_for c do |f| %>
-            <%= f.input :status, as: :hidden, input_html: { value: 'confirmed'} %>
-            <%= f.submit 'Accept', class: 'btn btn-primary' %>
-          <% end %>
-          <%= simple_form_for c do |f| %>
-            <%= f.input :status, as: :hidden, input_html: { value: 'decline'} %>
-            <%= f.submit 'Decline', class: 'btn btn-danger' %>
-          <% end %>
-        <% end %>
+      <div class="card-clients">
+        <div class="card-clients-info">
+          <p>Client : <strong><%= c.user.first_name %></strong></p>
+          <p>Contact : <strong><%= c.user.email %></strong></p>
+          <p><%= link_to 'Cancel booking', booking_path(c), method: :delete, class: "text-delete-clients" %></p>
+        </div>
+          <div class="card-clients-buttons">
+            <% if c.status.nil?  %>
+              <%= simple_form_for c do |f| %>
+                <%= f.input :status, as: :hidden, input_html: { value: 'confirmed'} %>
+                <%= f.submit 'Accept', class: 'btn-accept' %>
+              <% end %>
+              <%= simple_form_for c do |f| %>
+                <%= f.input :status, as: :hidden, input_html: { value: 'decline'} %>
+                <%= f.submit 'Decline', class: 'btn-decline' %>
+              <% end %>
+            <% end %>
+        </div>
+      </div>
       <% end %>
 
   </div>

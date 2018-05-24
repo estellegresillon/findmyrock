@@ -1,5 +1,6 @@
 /* Your profile header CSS code here */
 .profile-header-wrapper {
+  margin-top: -35px;
     background: #f4f4f4;
 }
 
@@ -56,9 +57,9 @@
 }
 .tab.active {
   background: white !important;
-  color: black;
+  color: #FF0000 !important;
 }
 .tab.active:hover {
   background: white !important;
-  color: black;
+  color: #FF0000 !important;
 }
