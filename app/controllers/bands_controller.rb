@@ -39,7 +39,7 @@ before_action :set_band, only: [:show, :update]
 
     elsif params[:style].blank? && params[:address].present? && params[:budget].present?
       sql_query = " \
-              AND  price_per_hour < :budget \
+              price_per_hour < :budget \
             "
             @bands = @bands.where(sql_query, budget: params[:budget].to_i).near(params[:address], 10)
     end
