@@ -15,7 +15,7 @@
 .card {
   height: 200px;
   width: 300px;
-  box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  box-shadow: 1px 5px 5px rgba(0,0,0,0.3);
   color: white;
   position: relative;
   background-color: white;
@@ -29,7 +29,7 @@
   justify-content: center;
 }
 .card:hover {
-  box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
+  box-shadow: 3px 7px 10px rgba(0,0,0,0.3);
   margin-top: -5px;
 }
 .cards-booking {

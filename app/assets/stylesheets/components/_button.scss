@@ -9,6 +9,7 @@
   margin-bottom: 20px;
   font-weight: bolder;
   color: white;
+  transition: all 0.5s ease;
   text-decoration: none;
   box-shadow: 0 2px 6px 0 rgba(255,120,180,0.4);
 }
@@ -24,6 +25,7 @@
   background: linear-gradient(135deg, #ef7070 0%, #FF0000 100%);
   border: none;
   width: 100%;
+  transition: all 0.5s ease;
   padding: 12px 20px;
   border-radius: 25px;
   text-align: center;
@@ -49,6 +51,7 @@
   border-radius: 25px;
   text-align: center;
   margin-top: 30px;
+  transition: all 0.5s ease;
   margin-bottom: 20px;
   font-weight: bolder;
   color: white;
@@ -61,7 +64,7 @@
   font-weight: bolder;
   color: white;
   text-decoration: none;
-  box-shadow: 0 5px 10px 0 rgba(45,222,152,0.4);
+  box-shadow: 0 5px 10px 0 rgba(45,222,152,0.6);
 }
 .goback {
   margin-top: 70px;
@@ -85,11 +88,12 @@
   font-color: white;
   padding: 12px 20px;
   border-radius: 25px;
+  transition: all 0.5s ease;
   text-align: center;
   margin-bottom: 20px;
   font-weight: bolder;
   color: white;
-  box-shadow: 0 2px 6px 0 rgba(45,222,152,0.4);
+  box-shadow: 0 2px 6px 0 rgba(45,222,152,0.5);
 }
 
 .submit:hover {
@@ -102,6 +106,7 @@
 .btn-search {
   background: linear-gradient(135deg, #21c7d0 0%, #2dde98 100%);
   border: none;
+  transition: all 0.5s ease;
   width: 220px;
   height: 53px;
   border-radius: 25px;
@@ -182,6 +187,7 @@
   padding: 12px 20px;
   border-radius: 25px;
   text-align: center;
+  transition: all 0.5s ease;
   margin: 5px;
   font-weight: bolder;
   color: white;
@@ -199,6 +205,7 @@
   border: none;
   width: 100%;
   font-color: white;
+  transition: all 0.5s ease;
   padding: 12px 20px;
   border-radius: 25px;
   text-align: center;
