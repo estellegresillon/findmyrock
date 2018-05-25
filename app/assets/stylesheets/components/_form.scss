@@ -47,11 +47,12 @@
 .form-booking {
   background-color: white;
   box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-  //z-index: 2;
+  z-index: 2;
   margin-top: -80px;
+  margin-bottom: 0px;
   padding: 20px 40px 20px 40px;
   transition: all 0.3s ease;
-  margin-bottom: 0px;
+
 }
 .form-booking:hover {
   margin-top: -90px;
