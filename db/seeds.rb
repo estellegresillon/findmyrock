@@ -42,7 +42,7 @@ first_band = Band.create(
   new_band = Band.create(
     name: Faker::Superhero.name,
     description: Faker::Lorem.sentence,
-    price_per_hour: Random.rand(100..15000),
+    price_per_hour: Random.rand(100..6000),
     number_of_musicians: Random.rand(1..6),
     address: ["Paris", "Dijon", "Reims"].sample,
     music_style: ["Rock", "Metal", "Pop", "Blues"].sample,
