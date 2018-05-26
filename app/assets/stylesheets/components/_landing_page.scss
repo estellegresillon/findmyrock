@@ -56,6 +56,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  -webkit-animation: fadeInUp;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: step-start;
+  -webkit-animation-delay: 1s;
   justify-content: center;
 }
 .card-home:hover {
