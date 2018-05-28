@@ -2,7 +2,7 @@
   <div class="banner-content">
     <h1>Book your favorite band today</h1>
     <h2>Talents around you for maximum happiness</h2>
-    <div class="searchbar-home">
+    <div class="searchbar-home animated fadeIn">
       <%= form_tag bands_path, method: "get" do %>
       <%= text_field_tag :date, nil, placeholder: "Date", class: 'datepicker', id: 'searchbar-band' %>
       <%= text_field_tag :address, nil, placeholder: "Address", id: 'band_address' %>

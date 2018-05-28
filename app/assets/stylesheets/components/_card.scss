@@ -27,6 +27,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  -webkit-animation: fadeIn;
+  -webkit-animation-duration: 1s;
 }
 .card:hover {
   box-shadow: 3px 7px 10px rgba(0,0,0,0.3);
